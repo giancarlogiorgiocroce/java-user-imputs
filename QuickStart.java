@@ -15,8 +15,17 @@ class QuickStart {
         String language = scanner.nextLine();
 
         // It's not possible to use == inside the if? ".equals()" is a good substitute.
-        if ( language.toLowerCase().equals("java")) System.out.printf("%s is the best!", language);
-        else System.out.printf("%s is good but have you tried Java?(!)", language);
+        // if ( language.toLowerCase().equals("java")) System.out.printf("%s is the best!", language);
+        // else System.out.printf("%s is good but have you tried Java?(!)", language);
+
+        // In Java switch and breaks are faster then if and elses
+        switch (language.toLowerCase()) {
+            case "java":
+                System.out.printf("%s is the best!", language);
+                break;
+            default:
+                System.out.printf("%s is good but have you tried Java?(!)", language);
+        }
 
         // If not closed, the scanner keep listening open wide to all forms of hijacking.
         scanner.close();
